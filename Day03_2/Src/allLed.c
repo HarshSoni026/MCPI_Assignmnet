@@ -1,14 +1,3 @@
-/*
- * allLed.c
- *
- *  Created on: Mar 27, 2024
- *      Author: harsh
- */
-
-
-
-
-
 #include "allLed.h"
 #include "stm32f4xx.h"
 
@@ -25,12 +14,12 @@ void LedInit(uint32_t pin) {
 
 void LedOn(uint32_t pin) {
 
-	LED_GPIO->BSRR |= BV(pin);
+	LED_GPIO->BSRR = BV(pin);
 }
 
 void LedOff(uint32_t pin) {
 
-	LED_GPIO->BSRR &= ~BV(pin + 16);
+	LED_GPIO->BSRR = BV(pin + 16);
 }
 
 void LedBlink(uint32_t pin, uint32_t delay) {
@@ -38,3 +27,25 @@ void LedBlink(uint32_t pin, uint32_t delay) {
 	DelayMs(delay);
 	LedOff(pin);
 }
+ void AllLedOn(){
+	 LedOn(LED_BLUE);
+	 LedOn(LED_GREEN);
+	 LedOn(LED_RED);
+	 LedOn(LED_ORANGE);
+
+ }
+ void AllLedOff(){
+	 LedOff(LED_BLUE);
+	 LedOff(LED_GREEN);
+	 LedOff(LED_RED);
+	 LedOff(LED_ORANGE);
+
+ }
+
+
+
+
+
+
+
+

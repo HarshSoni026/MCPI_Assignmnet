@@ -1,7 +1,5 @@
-
-
-#ifndef allLed_H
-#define allLed_H
+#ifndef LED_H_
+#define LED_H_
 
 #include "stm32f407xx.h"
 
@@ -17,5 +15,7 @@ void LedInit(uint32_t pin);
 void LedOn(uint32_t pin);
 void LedOff(uint32_t pin);
 void LedBlink(uint32_t pin, uint32_t delay);
+void AllLedOn();
+void AllLedOff();
 
-#endif
+#endif /* LED_H_ */
